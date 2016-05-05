@@ -1,4 +1,3 @@
-<!-- TOP-MENU -->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -14,10 +13,11 @@
         <div class="collapse navbar-collapse" id="topmenu">
             <ul class="nav navbar-nav navbar-right">
                 <?php foreach ($menu as $item):?>
-                    <li><a href=""><?= $item['title']; ?></a></li>
+                    <li>
+                        <a <?php if ($page_info['title_url'] == $item['title_url']) echo "class='active_menu'"; ?> href="<?= base_url(); ?>index.php/main/page/<?= $item['title_url']; ?>"><?= $item['title']; ?></a>
+                    </li>
                 <?php endforeach; ?>
             </ul>
         </div>
     </div>
 </nav>
-<!-- END TOP-MENU -->

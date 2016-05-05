@@ -1,7 +1,6 @@
             <div class="row" id="footer">
                 <div class="col-lg-12">
                     
-                    <!-- BOTTOM-MENU -->
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
                             <div class="navbar-header">
@@ -11,19 +10,20 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="#"><img src="<?= base_url(); ?>images/logo.png" alt="logosite"></a>
+                                <a href="<?= base_url(); ?>"><img src="<?= base_url(); ?>images/logo.png" alt="logosite"></a>
                             </div>
 
                             <div class="collapse navbar-collapse" id="bot_menu">
-                                <ul class="nav navbar-nav navbar-left">
+                                <ul class="nav navbar-nav navbar-right">
                                     <?php foreach ($menu as $item):?>
-                                        <li class="bottom-items"><a href=""><?= $item['title']; ?></a></li>
+                                        <li>
+                                            <a <?php if ($page_info['title_url'] == $item['title_url']) echo "class='active_menu'"; ?> href="<?= base_url(); ?>index.php/main/page/<?= $item['title_url']; ?>"><?= $item['title']; ?></a>
+                                        </li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                     </nav>
-                    <!-- END BOTTOM-MENU -->
                     
                 </div>
             </div>

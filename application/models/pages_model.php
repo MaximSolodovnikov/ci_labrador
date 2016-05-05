@@ -28,4 +28,15 @@ class pages_model extends CI_Model {
         $query = $this->db->get('articles');
         return $query->row_array();
     }
+    
+    /*Output of comments*/
+    function get_comments($article_id) {
+        
+        $this->db->select('*');
+        $this->db->from('comments');
+        $this->db->join('users', 'users.id = comments.username_id', 'left');
+        $this->db->where('comments.article_id', $article_id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

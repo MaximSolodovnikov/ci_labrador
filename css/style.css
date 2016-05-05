@@ -96,3 +96,7 @@ a.link_of_article:hover {
 #article_img {
     margin-top: 25px;
 }
+
+.active_menu {
+    color: yellow !important;
+}
