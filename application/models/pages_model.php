@@ -16,13 +16,13 @@ class pages_model extends CI_Model {
         return $query->row_array();
     }
     
-    public function get_all_news()
+    public function get_all_articles()
     {
         $query = $this->db->get('articles');
         return $query->result_array();
     }
     
-    public function get_news($title)
+    public function get_articles($title)
     {
         $this->db->where('title_url', $title);
         $query = $this->db->get('articles');

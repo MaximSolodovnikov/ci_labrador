@@ -7,7 +7,7 @@
         <meta name="description" content="<?= $page_info['keywords']; ?>">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title><?= $page_info['title']; ?></title>
-        <link rel="icon" href="favicon.png">
+        <link rel="icon" href="<?= base_url(); ?>favicon.png">
 
         <!-- Bootstrap -->
         <link href="<?= base_url(); ?>css/bootstrap.css" rel="stylesheet">
