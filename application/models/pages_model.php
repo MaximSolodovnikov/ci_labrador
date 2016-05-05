@@ -10,6 +10,7 @@ class pages_model extends CI_Model {
     }
             
     public function get_page_info($title) {
+        
         $this->db->where('title_url', $title);
         $query = $this->db->get('pages');
         return $query->row_array();
@@ -17,7 +18,14 @@ class pages_model extends CI_Model {
     
     public function get_all_news()
     {
-        $query = $this->db->get('news');
+        $query = $this->db->get('articles');
         return $query->result_array();
+    }
+    
+    public function get_news($title)
+    {
+        $this->db->where('title_url', $title);
+        $query = $this->db->get('articles');
+        return $query->row_array();
     }
 }

@@ -11,6 +11,4 @@ class Main extends CI_Controller {
         $name = 'content';
         $this->template->page_view($name, $data);
     }
-    
-    
 }

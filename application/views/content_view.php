@@ -2,7 +2,7 @@
     <?php foreach ($news as $item): ?>
         <div id="articles">
             <div class="col-lg-8">
-                <a href="" class="title_of_article"><?= $item['title']; ?></a>
+                <a href="<?= base_url() ;?>index.php/article/<?= $item['title_url']; ?>" class="title_of_article"><?= $item['title']; ?></a>
             </div>
             <div class="col-lg-4">
                 <p class="date_of_article">Дата: <?= $item['date_time']; ?></p><br>
