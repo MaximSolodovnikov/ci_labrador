@@ -1,5 +1,5 @@
 <div class="row" id="content">
-    <?php if ($page_info['title_url'] == 'main'): ?>
+    <?php if ($page_info['title_url'] == 'main' || $page_info['title_url'] == 'news'): ?>
         <?php foreach ($news as $item): ?>
             <div id="articles">
                 <div class="col-lg-8">
@@ -19,7 +19,6 @@
                     <a class="link_of_article btn btn-default" href="<?= base_url() ;?>index.php/article/<?= $item['title_url']; ?>">
                         Читать &raquo;
                     </a>
-                    <?php var_dump($page_info['title_url'])?>
                 </div>
                 <div class="clear"></div>
             </div><br>
