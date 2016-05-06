@@ -14,7 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php foreach ($menu as $item):?>
                     <li>
-                        <a <?php if ($page_info['title_url'] == $item['title_url']) echo "class='active_menu'"; ?> href="<?= base_url(); ?>index.php/main/page/<?= $item['title_url']; ?>"><?= $item['title']; ?></a>
+                        <a <?php if ($page_info['title_url'] == $item['title_url']) echo "class='active_menu'"; ?> href="<?= base_url(); ?>index.php/<?= $item['title_url']; ?>"><?= $item['title']; ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>

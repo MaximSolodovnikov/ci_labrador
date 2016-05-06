@@ -7,7 +7,7 @@
             <div class="col-lg-4">
                 <p class="date_of_article">Дата: <?= $page_info['date_time']; ?></p><br>
             </div>
-            <img src="<?= base_url(); ?>images/news/images/1.jpeg" alt="" class="preview_img_of_article">
+            <img src="<?= base_url(); ?>images/news/images/<?= $page_info['preview_img']; ?>" alt="" class="preview_img_of_article">
             <div class="text_of_article">
                 <?= $page_info['text']; ?>
             </div>

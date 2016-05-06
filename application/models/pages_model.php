@@ -29,7 +29,7 @@ class pages_model extends CI_Model {
         return $query->row_array();
     }
     
-    /*Output of images*/
+    /*Output images of specific article*/
     function get_images($title) {
         
         $this->db->select('*');
@@ -39,4 +39,11 @@ class pages_model extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+	
+	function get_all_img()
+	{
+		$this->db->order_by('id', 'desc');
+		$query = $this->db->get('images');
+        return $query->result_array();
+	}
 }
