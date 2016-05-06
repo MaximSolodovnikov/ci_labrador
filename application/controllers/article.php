@@ -7,6 +7,7 @@ class Article extends CI_Controller {
     {
         $data['menu'] = $this->pages_model->get_menu();
         $data['page_info'] = $this->pages_model->get_articles($title);
+        $data['img'] = $this->pages_model->get_images($title);
         $name = 'page';
         $this->template->page_view($name, $data);
     }
