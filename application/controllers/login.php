@@ -40,7 +40,7 @@ class Login extends CI_Controller {
                     redirect(base_url() . 'index.php/admin');
                 } else {
                     
-                    $data['error'] = "Данные email или пароль не существуют";
+                    $data['error'] = "Вы не обладаете правами Администратора или ввели неверные данные";
                     $name = 'login';
                     $this->template->login_view($name, $data);
                 }

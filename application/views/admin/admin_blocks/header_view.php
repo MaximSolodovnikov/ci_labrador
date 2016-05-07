@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title><?php $page_info['title']; ?></title>
+    <title><?= $page_info['title']; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url(); ?>css/bootstrap.css" rel="stylesheet">

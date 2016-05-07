@@ -32,9 +32,9 @@
         <div class="alert alert-dismissible alert-danger"><?= $error; ?></div>
         <?php endif; ?>
         <label for="inputEmail" class="sr-only">Email адрес</label>
-        <input type="email" name="email"  class="form-control" placeholder="Email адрес" > <?php /* Added required autofocus id="inputEmail"*/ ;?>
+        <input type="email" name="email"  class="form-control" placeholder="Email адрес" required autofocus id="inputEmail">
         <label for="inputPassword" class="sr-only">Пароль</label>
-        <input type="password" name="pswd"  class="form-control" placeholder="Пароль" ><?php /* Added required id="inputPassword"*/ ;?>
+        <input type="password" name="pswd"  class="form-control" placeholder="Пароль" required id="inputPassword">
         <input class="btn btn-lg btn-primary btn-block" type="submit" value="Войти" name="enter">
       </form>
 
