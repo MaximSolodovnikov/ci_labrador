@@ -8,7 +8,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Админ панель</a>
+                <a class="navbar-brand" href="<?= base_url(); ?>index.php/admin">Админ панель</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -24,7 +24,20 @@
                 <h3>Статьи</h3>
                 <ul class="nav nav-sidebar"> 
                     <li>
-                        <a href="" accesskey="">Добавить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/add/article" accesskey="">Добавить</a>
+                    </li>
+                    <li>
+                        <a href=""  accesskey="">Редактировать</a>
+                    </li>
+                    <li>
+                        <a href=""  accesskey="">Удалить</a>
+                    </li>
+                </ul>
+                
+                <h3>Пользователи</h3>
+                <ul class="nav nav-sidebar"> 
+                    <li>
+                        <a href="<?= base_url(); ?>index.php/admin/add/user" accesskey="">Добавить</a>
                     </li>
                     <li>
                         <a href=""  accesskey="">Редактировать</a>
