@@ -8,6 +8,7 @@ class Main extends CI_Controller {
         $data['menu'] = $this->pages_model->get_menu();
         $data['page_info'] = $this->pages_model->get_page_info('main');
         $data['news'] = $this->pages_model->get_all_articles();
+        $data['last_news'] = $this->pages_model->get_last_article();
         $name = 'main';
         $this->template->page_view($name, $data);
     }

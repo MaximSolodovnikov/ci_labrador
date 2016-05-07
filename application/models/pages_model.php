@@ -18,6 +18,7 @@ class pages_model extends CI_Model {
     
     public function get_all_articles()
     {
+        $this->db->order_by('id', 'desc');
         $query = $this->db->get('articles');
         return $query->result_array();
     }
@@ -25,6 +26,15 @@ class pages_model extends CI_Model {
     public function get_articles($title)
     {
         $this->db->where('title_url', $title);
+        $query = $this->db->get('articles');
+        return $query->row_array();
+    }
+    
+    /*Output last article*/
+    function get_last_article() 
+    {
+        $this->db->order_by('id', 'desc');
+        $this->db->limit('1');
         $query = $this->db->get('articles');
         return $query->row_array();
     }
