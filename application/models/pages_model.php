@@ -40,10 +40,26 @@ class pages_model extends CI_Model {
         return $query->result_array();
     }
 	
-	function get_all_img()
-	{
-		$this->db->order_by('id', 'desc');
-		$query = $this->db->get('images');
+    function get_all_img()
+    {
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get('images');
         return $query->result_array();
-	}
+    }
+    
+    /*Checking username and password to login*/
+    function check_data_for_authorization($email, $pswd) {
+        
+        $this->db->where('email', $email);
+        $this->db->where('pswd', $pswd);
+        $this->db->select('email');
+        $query = $this->db->get('users');
+        
+        if($query->num_rows() > 0) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 }

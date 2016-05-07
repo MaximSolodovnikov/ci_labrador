@@ -13,6 +13,13 @@ class Template {
         $CI->load->view('blocks/footer_view', $data);
     }
     
+    function login_view($name, $data)
+    {
+        $CI =& get_instance();
+
+        $CI->load->view('admin/' . $name . '_view', $data);
+    }
+    
     function admin_view($name, $data)
     {
         $CI =& get_instance();
