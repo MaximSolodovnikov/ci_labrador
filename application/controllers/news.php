@@ -29,7 +29,6 @@ class News extends CI_Controller {
         
         $this->pagination->initialize($config); 
         
-
         $data['menu'] = $this->pages_model->get_menu();
         $data['page_info'] = $this->pages_model->get_page_info('news');
         $data['news'] = $this->pages_model->get_all_articles($config['per_page'], $this->uri->segment(3));

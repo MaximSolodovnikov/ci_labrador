@@ -50,10 +50,10 @@ class pages_model extends CI_Model {
         return $query->result_array();
     }
 	
-    function get_all_img()
+    function get_all_img($num, $offset)
     {
         $this->db->order_by('id', 'desc');
-        $query = $this->db->get('images');
+        $query = $this->db->get('images', $num, $offset);
         return $query->result_array();
     }
     

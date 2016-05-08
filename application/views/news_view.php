@@ -23,8 +23,8 @@
             </div><br>
         <?php endforeach; ?>
     
-            <div id="pagination">
-                <?php echo $this->pagination->create_links() ;?>
-            </div>
+        <div id="pagination">
+            <?php echo $this->pagination->create_links() ;?>
+        </div>
         
 </div>
