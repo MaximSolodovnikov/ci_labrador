@@ -6,9 +6,11 @@
                         <tr>
                             <th><a href="">Статьи</a></th>
                             <th><a href="">Пользователи</a></th>
+                            <th><a href="">Картинки в слайдере</a></th>
                         </tr>
                     </thead>
                     <tbody>
+                        <td>x</td>
                         <td>x</td>
                         <td>x</td>
                     </tbody>

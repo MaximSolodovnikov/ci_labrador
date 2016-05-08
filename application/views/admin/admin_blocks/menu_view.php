@@ -21,10 +21,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-2 sidebar">
-                <h3>Статьи</h3>
-                <ul class="nav nav-sidebar"> 
+                
+                <ul class="nav nav-sidebar section_body"> 
+                    <div class="section_title">Статьи</div>
                     <li>
-                        <a href="<?= base_url(); ?>index.php/admin/add/article" accesskey="">Добавить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/add/articles" accesskey="">Добавить</a>
+                    </li>
+                    <li>
+                        <a href=""  accesskey="">Редактировать</a>
+                    </li>
+                    <li>
+                        <a href=""  accesskey="">Удалить</a>
+                    </li>
+                </ul>
+
+                <ul class="nav nav-sidebar section_body">
+                    <div class="section_title">Пользователи</div>
+                    <li>
+                        <a href="<?= base_url(); ?>index.php/admin/add/users" accesskey="">Добавить</a>
                     </li>
                     <li>
                         <a href=""  accesskey="">Редактировать</a>
@@ -34,10 +48,10 @@
                     </li>
                 </ul>
                 
-                <h3>Пользователи</h3>
-                <ul class="nav nav-sidebar"> 
+                <ul class="nav nav-sidebar section_body">
+                    <div class="section_title">Слайдер</div>
                     <li>
-                        <a href="<?= base_url(); ?>index.php/admin/add/user" accesskey="">Добавить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/add/slider" accesskey="">Добавить</a>
                     </li>
                     <li>
                         <a href=""  accesskey="">Редактировать</a>

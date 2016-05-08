@@ -1,6 +1,6 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-class pages_model extends CI_Model {
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Pages_model extends CI_Model {
 	
     public function get_menu()
     {
@@ -63,7 +63,6 @@ class pages_model extends CI_Model {
         return $query->result_array();
     }
 
-
     /*Checking username and password to login*/
     function check_data_for_authorization($email, $pswd) {
         
@@ -78,5 +77,11 @@ class pages_model extends CI_Model {
         else {
             return FALSE;
         }
+    }
+    
+    /*Added info about articles, users and slider images to database*/
+    function add_info($page, $add)
+    {
+         $this->db->insert($page, $add);
     }
 }

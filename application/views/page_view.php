@@ -25,7 +25,6 @@
                     <?php endforeach; ?>    
                 </div>
              
-            
             <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
@@ -36,10 +35,7 @@
                     </div>
                 </div>
             </div>
-            
 
-            
-            
         </div><br>
     </div>
 </div>
