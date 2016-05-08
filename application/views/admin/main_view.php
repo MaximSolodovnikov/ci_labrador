@@ -2,6 +2,7 @@
             
             <div class="table-responsive">
                 <table class="table table-striped">
+                    <h3>Статистика</h3>
                     <thead>
                         <tr>
                             <th><a href="">Статьи</a></th>

@@ -5,7 +5,7 @@
 
                 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
                     <fieldset>
-                        <legend style="font-style: italic; font-weight: bold;">Добавление статьи</legend>
+                        <legend style="font-style: italic; font-weight: bold;">Редактирование статьи</legend>
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Название статьи</label>
                             <div class="col-lg-10">

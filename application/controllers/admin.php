@@ -55,19 +55,35 @@ class Admin extends CI_Controller {
                 foreach($add as $key => $val) {
                     
                     if( ! $add[$key]) {
+                        
                         unset($add[$key]);
                     }
                 }
                 /*-------------------------------------------------------------*/
                 
-                $data['info'] = 'Добавление прошло успешно';
-                $name = 'info';
                 $this->pages_model->add_info($page, $add);
+                redirect(base_url() . 'index.php/admin');
             } else {
                 
                 $name = 'add/' . $page;
                 $this->template->admin_view($name, $data);
             }
+        }
+    }
+    
+    function edit($page)
+    {
+        $data['user'] = $this->session->userdata('email');
+        $data['error'] = '';
+        
+        if (empty($data['user'])) {
+            
+            $name = 'login';
+            $this->template->login_view($name, $data);
+        } else {
+            
+            $name = 'edit/' . $page;
+                $this->template->admin_view($name, $data);
         }
     }
 }
