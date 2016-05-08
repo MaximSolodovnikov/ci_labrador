@@ -16,10 +16,10 @@ class pages_model extends CI_Model {
         return $query->row_array();
     }
     
-    public function get_all_articles()
+    public function get_all_articles($num, $offset)
     {
         $this->db->order_by('id', 'desc');
-        $query = $this->db->get('articles');
+        $query = $this->db->get('articles', $num, $offset);
         return $query->result_array();
     }
     
