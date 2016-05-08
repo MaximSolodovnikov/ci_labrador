@@ -57,6 +57,13 @@ class pages_model extends CI_Model {
         return $query->result_array();
     }
     
+    function get_slider_img()
+    {
+        $query = $this->db->get('slider');
+        return $query->result_array();
+    }
+
+
     /*Checking username and password to login*/
     function check_data_for_authorization($email, $pswd) {
         
