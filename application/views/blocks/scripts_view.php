@@ -7,7 +7,7 @@
         <meta name="description" content="<?= $page_info['keywords']; ?>">
         
         <title><?= $page_info['title']; ?></title>
-        <link rel="icon" href="<?= base_url(); ?>favicon.png">
+        <link rel="icon" href="<?= base_url(); ?>favicon.ico">
 
         <!-- Bootstrap -->
         <link href="<?= base_url(); ?>css/bootstrap.css" rel="stylesheet">

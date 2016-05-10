@@ -63,13 +63,15 @@ a.link_of_article:hover {
 
 .text_of_article {
     font-size: 90%;
-    padding: 15px;
+    padding: 0 10px;
 }
 
 .preview_img_of_article {
-    float:left; 
-    width: 15%; 
-    margin: 0 10px;
+    float:left;
+    width: 100%;
+	
+	min-width: 90px;
+	max-width: 181px;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.37);
@@ -91,10 +93,6 @@ a.link_of_article:hover {
     margin-bottom: 15px;
 }
 
-.clear {
-    clear: both;
-}
-
 #article_img {
     margin-top: 25px;
 }
@@ -106,4 +104,8 @@ a.link_of_article:hover {
 #pagination {
     margin: 0 auto;
     text-align: center;
+}
+
+.clear {
+	clear: both;
 }

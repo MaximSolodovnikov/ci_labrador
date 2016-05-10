@@ -9,7 +9,7 @@ class Gallery extends CI_Controller {
         
         $config['base_url'] = base_url() . 'index.php/gallery/index/';
         $config['total_rows'] = $this->db->count_all('images');
-        $config['per_page'] = 1;
+        $config['per_page'] = 32;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_tag_open'] = '<li>';

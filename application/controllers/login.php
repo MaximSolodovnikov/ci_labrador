@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
@@ -9,19 +9,19 @@ class Login extends CI_Controller {
         $data['error'] = '';
 
         if ($this->input->post('enter')) {
-            if (empty($this->input->post('email')) && empty($this->input->post('pswd'))) {
+            if (!$this->input->post('email') && !$this->input->post('pswd')) {
                 
                 $data['error'] = "Вы не заполнили все поля";
                 $name = 'login';
                 $this->template->login_view($name, $data);
                 
-            } elseif (empty($this->input->post('email'))) {
+            } elseif (!$this->input->post('email')) {
                 
                 $data['error'] = "Вы не ввели email";
                 $name = 'login';
                 $this->template->login_view($name, $data);
                 
-            } elseif (empty($this->input->post('pswd'))) {
+            } elseif (!$this->input->post('pswd')) {
             
                 $data['error'] = "Вы не ввели пароль";
                 $name = 'login';

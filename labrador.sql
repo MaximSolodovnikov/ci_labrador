@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 05 2016 г., 19:15
--- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
+-- Время создания: Май 09 2016 г., 11:19
+-- Версия сервера: 10.1.9-MariaDB
+-- Версия PHP: 5.5.30
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `labrador`
@@ -26,16 +26,15 @@ SET time_zone = "+00:00";
 -- Структура таблицы `articles`
 --
 
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `title_url` varchar(255) NOT NULL,
   `preview_img` varchar(255) NOT NULL,
   `text` text NOT NULL,
   `keywords` text NOT NULL,
-  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `articles`
@@ -52,13 +51,20 @@ INSERT INTO `articles` (`id`, `title`, `title_url`, `preview_img`, `text`, `keyw
 -- Структура таблицы `images`
 --
 
-CREATE TABLE IF NOT EXISTS `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
   `thumbs` varchar(150) NOT NULL,
   `img` varchar(150) NOT NULL,
-  `article_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `article_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `images`
+--
+
+INSERT INTO `images` (`id`, `thumbs`, `img`, `article_id`) VALUES
+(1, '', '4.jpg', 1),
+(2, '', '5.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -66,14 +72,13 @@ CREATE TABLE IF NOT EXISTS `images` (
 -- Структура таблицы `pages`
 --
 
-CREATE TABLE IF NOT EXISTS `pages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `title_url` varchar(255) NOT NULL,
   `keywords` text NOT NULL,
-  `hidden` varchar(5) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `hidden` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `pages`
@@ -82,9 +87,113 @@ CREATE TABLE IF NOT EXISTS `pages` (
 INSERT INTO `pages` (`id`, `title`, `title_url`, `keywords`, `hidden`) VALUES
 (1, 'Главная', 'main', 'Лабрадор, заводчик лабрадоров, щенки лабрадора', 'no'),
 (2, 'Новости', 'news', 'Лабрадор, заводчик лабрадоров, щенки лабрадора', 'no'),
-(3, 'Наши собаки', 'dogs', 'Лабрадоры', 'no'),
-(4, 'Щенки', 'puppies', 'Щенки лабрадоров', 'no');
+(3, 'Галерея', 'gallery', 'ключевые слова для страницы галерея', 'no'),
+(4, 'Администрация', 'admin', '', 'yes'),
+(5, 'Авторизация', 'login', '', 'yes');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL,
+  `slider_img` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `slider`
+--
+
+INSERT INTO `slider` (`id`, `slider_img`) VALUES
+(1, '2.jpg'),
+(2, '3.jpg'),
+(3, '4.jpg'),
+(4, '5.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pswd` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `pswd`) VALUES
+(1, 'Gumolas@yandex.ua', 'salomuG');
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT для таблицы `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT для таблицы `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

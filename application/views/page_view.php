@@ -2,17 +2,19 @@
     <div class="col-lg-12">
         <div id="articles">
             <div class="col-lg-8">
-                <p class="title_of_article"><?= $page_info['title']; ?></p>
+                <h4 class="title_of_article"><?= $page_info['title']; ?></h4>
             </div>
             <div class="col-lg-4">
                 <p class="date_of_article">Дата: <?= $page_info['date_time']; ?></p><br>
             </div>
-            <img src="<?= base_url(); ?>images/news/images/<?= $page_info['preview_img']; ?>" alt="" class="preview_img_of_article">
-            <div class="text_of_article">
-                <?= $page_info['text']; ?>
-            </div>
-            <div class="clear"></div>
-
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">
+					<img src="<?= base_url(); ?>images/news/images/<?= $page_info['preview_img']; ?>" alt="" class="preview_img_of_article">
+				</div>
+				<div class="text_of_article">
+					<?= $page_info['text']; ?>
+				</div>
+			</div>
                 <div class="row" id="article_img">
                     <?php foreach ($img as $item):?>
                         <?php if (isset($item['img'])): ?>

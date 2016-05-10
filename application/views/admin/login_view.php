@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -27,7 +27,7 @@
     <div class="container">
         <form class="form-signin" method="post" action="<?= base_url(); ?>index.php/login">
         <h2 class="form-signin-heading">Авторизация</h2>
-        <?php if (!empty($error)): ?>
+        <?php if (!$error): ?>
             <p class="text-danger"><?= $error; ?></p>
         <?php endif; ?>
         <label for="inputEmail" class="sr-only">Email адрес</label>
