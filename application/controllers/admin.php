@@ -100,7 +100,7 @@ class Admin extends CI_Controller {
         }
     }
     
-    function articles_editlist($page)
+    /*function articles_editlist($page)
     {
         $data['user'] = $this->session->userdata('email');
         $data['error'] = '';
@@ -151,6 +151,40 @@ class Admin extends CI_Controller {
             $data['slider_list'] = $this->pages_model->get_slider_editlist();
             $name = 'edit/slider_editlist';
             $this->template->admin_view($name, $data);
+        }
+    }*/
+    
+    function editlist($page)
+    {
+        $data['user'] = $this->session->userdata('email');
+        $data['error'] = '';
+        
+        if (empty($data['user'])) {
+            
+            $name = 'login';
+            $this->template->login_view($name, $data);
+        } else {
+            
+            if($page == 'articles'){
+                
+                $data['page_info'] = $this->pages_model->get_page_info($page);
+                $data['articles_list'] = $this->pages_model->get_editlist($page);
+                $name = 'edit/articles';
+                $this->template->admin_view($name, $data);
+                
+            } elseif ($page == 'users') {
+                
+                $data['page_info'] = $this->pages_model->get_page_info($page);
+                $data['users_list'] = $this->pages_model->get_editlist($page);
+                $name = 'edit/users';
+                $this->template->admin_view($name, $data);
+            } else {
+                
+                $data['page_info'] = $this->pages_model->get_page_info($page);
+                $data['slider_list'] = $this->pages_model->get_editlist($page);
+                $name = 'edit/slider';
+                $this->template->admin_view($name, $data);
+            }
         }
     }
 }
