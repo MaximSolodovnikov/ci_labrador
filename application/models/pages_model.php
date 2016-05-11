@@ -84,4 +84,25 @@ class Pages_model extends CI_Model {
     {
          $this->db->insert($page, $add);
     }
+    
+    function get_articles_editlist()
+    {
+        $query = $this->db->order_by('id', 'desc');
+        $query = $this->db->get('articles');
+        return $query->result_array();
+    }
+    
+    function get_users_editlist()
+    {
+        $query = $this->db->order_by('id', 'desc');
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
+    
+    function get_slider_editlist()
+    {
+        $query = $this->db->order_by('id', 'desc');
+        $query = $this->db->get('slider');
+        return $query->result_array();
+    }
 }

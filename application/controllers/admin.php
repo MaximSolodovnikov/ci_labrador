@@ -70,7 +70,7 @@ class Admin extends CI_Controller {
                         $this->image_lib->resize();
                     }
                 }
-				/*-------------------------------------*/
+                /*-------------------------------------*/
 				
                 $add['title'] = $this->input->post('title');
                 $add['title_url'] = $this->input->post('title_url');
@@ -100,7 +100,7 @@ class Admin extends CI_Controller {
         }
     }
     
-    function edit($page)
+    function articles_editlist($page)
     {
         $data['user'] = $this->session->userdata('email');
         $data['error'] = '';
@@ -111,8 +111,46 @@ class Admin extends CI_Controller {
             $this->template->login_view($name, $data);
         } else {
             
-            $name = 'edit/' . $page;
-                $this->template->admin_view($name, $data);
+            $data['page_info'] = $this->pages_model->get_page_info($page);
+            $data['articles_list'] = $this->pages_model->get_articles_editlist();
+            $name = 'edit/articles_editlist';
+            $this->template->admin_view($name, $data);
+        }
+    }
+    
+    function users_editlist($page)
+    {
+        $data['user'] = $this->session->userdata('email');
+        $data['error'] = '';
+        
+        if (empty($data['user'])) {
+            
+            $name = 'login';
+            $this->template->login_view($name, $data);
+        } else {
+            
+            $data['page_info'] = $this->pages_model->get_page_info($page);
+            $data['users_list'] = $this->pages_model->get_users_editlist();
+            $name = 'edit/users_editlist';
+            $this->template->admin_view($name, $data);
+        }
+    }
+    
+    function slider_editlist($page)
+    {
+        $data['user'] = $this->session->userdata('email');
+        $data['error'] = '';
+        
+        if (empty($data['user'])) {
+            
+            $name = 'login';
+            $this->template->login_view($name, $data);
+        } else {
+            
+            $data['page_info'] = $this->pages_model->get_page_info($page);
+            $data['slider_list'] = $this->pages_model->get_slider_editlist();
+            $name = 'edit/slider_editlist';
+            $this->template->admin_view($name, $data);
         }
     }
 }
