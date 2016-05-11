@@ -36,9 +36,7 @@
                                 <?php if (form_error('text')): ?>
                                     <p class="text-danger"><?= form_error('text'); ?></p>
                                 <?php endif; ?>
-                                <textarea name="text" class="form-control" rows="3" id="textArea">
-                                    <?= set_value('text')?>
-                                </textarea>
+                                <textarea name="text" class="form-control" rows="3" id="textArea" placeholder="Текст статьи"><?= set_value('text')?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -47,9 +45,7 @@
                                 <?php if (form_error('keywords')): ?>
                                     <p class="text-danger"><?= form_error('keywords'); ?></p>
                                 <?php endif; ?>
-                                <textarea name="keywords" class="form-control" rows="3" id="textArea">
-                                    <?= set_value('keywords')?>
-                                </textarea>
+                                <textarea name="keywords" class="form-control" rows="3" id="textArea" placeholder="Ключевые слова - это слова из предполагаемого вопроса, которые есть на странице нашего сайта или в ссылках, ведущих на страницу нашего сайта, называются «ключевыми». Например: лабрадор, щенки лабрадора и т.д."><?= set_value('keywords')?></textarea>
                             </div>
                         </div>
                         <div class="form-group">

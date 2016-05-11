@@ -23,7 +23,7 @@
             <div class="col-xs-12 col-sm-3 col-md-2 sidebar">
                 
                 <ul class="nav nav-sidebar section_body"> 
-                    <div class="section_title">Статьи</div>
+                    <li class="section_title">Статьи</li>
                     <li>
                         <a href="<?= base_url(); ?>index.php/admin/add/articles" accesskey="">Добавить</a>
                     </li>
@@ -36,7 +36,7 @@
                 </ul>
 
                 <ul class="nav nav-sidebar section_body">
-                    <div class="section_title">Пользователи</div>
+                    <li class="section_title">Пользователи</li>
                     <li>
                         <a href="<?= base_url(); ?>index.php/admin/add/users" accesskey="">Добавить</a>
                     </li>
@@ -49,7 +49,7 @@
                 </ul>
                 
                 <ul class="nav nav-sidebar section_body">
-                    <div class="section_title">Слайдер</div>
+                    <li class="section_title">Слайдер</li>
                     <li>
                         <a href="<?= base_url(); ?>index.php/admin/add/slider" accesskey="">Добавить</a>
                     </li>
