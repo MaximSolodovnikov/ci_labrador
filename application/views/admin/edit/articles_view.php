@@ -17,9 +17,12 @@
                         </div>
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Главная картинка для статьи</label>
+                            <div class="col-lg-2" style="width: 30%">
+                                <img class="img-responsive" src="<?= base_url();?>images/news/images/<?= $page_info['preview_img']; ?>" alt="">
+                            </div><br>
                             <div class="col-lg-10">
                                 <input type="file" name="userfile"><br/>
-                            </div>   
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Название статьи (латиницей)</label>

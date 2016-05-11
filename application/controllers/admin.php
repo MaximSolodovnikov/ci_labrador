@@ -217,7 +217,7 @@ class Admin extends CI_Controller {
                 
                 //get_info() - data about specific article
                 $data['page_info'] = $this->pages_model->get_info($page, $id);
-                if ($this->form_validation->run() && $this->input->post('add')) {
+                if ($this->form_validation->run() && $this->input->post('edit')) {
                     
                     $edit['email'] = $this->input->post('email');
                     $edit['pswd'] = $this->input->post('pswd');

@@ -99,4 +99,10 @@ class Pages_model extends CI_Model {
         return $query->row_array();
         
     }
+    
+    function edit_info($page, $id, $edit)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($page, $edit);
+    }
 }
