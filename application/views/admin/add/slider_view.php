@@ -10,7 +10,7 @@
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Картинки для слайдера</label>
                             <div class="col-lg-10">
-                                <input class="input_file" type="file" name="slider_img"><br/>
+                                <input type="file" name="userfile"><br/>
                             </div>   
                         </div>
                         

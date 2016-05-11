@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/articles_editlist_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/controllers/main.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/libraries/template.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/blocks/slider_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/models/pages_model.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/users_view.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/slider_view.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/articles_view.php</file>
             <file>file:/X:/home/localhost/www/labrador/application/views/blocks/menu_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/users_editlist_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/admin_blocks/menu_view.php</file>
             <file>file:/X:/home/localhost/www/labrador/application/controllers/Admin.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/views/admin/admin_blocks/menu_view.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/models/Pages_model.php</file>
+            <file>file:/X:/home/localhost/www/labrador/application/views/admin/add/articles_view.php</file>
         </group>
     </open-files>
 </project-private>
