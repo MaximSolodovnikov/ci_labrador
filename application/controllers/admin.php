@@ -146,10 +146,13 @@ class Admin extends CI_Controller {
                 
             } elseif ($page == 'users') {
                 
+                //For link on editing page in article_list_view
+                $data['page'] = $page;
                 $data['page_info'] = $this->pages_model->get_page_info('users_editlist');
                 $data['users_list'] = $this->pages_model->get_editlist($page);
                 $name = 'edit/users_list';
                 $this->template->admin_view($name, $data);
+                
             } else {
                 
                 $data['page_info'] = $this->pages_model->get_page_info('slider_editlist');
@@ -212,15 +215,16 @@ class Admin extends CI_Controller {
                 }
             } elseif ($page == 'users') {
                 
-                $data['page_info'] = $this->pages_model->get_page_info('add_users');
+                //get_info() - data about specific article
+                $data['page_info'] = $this->pages_model->get_info($page, $id);
                 if ($this->form_validation->run() && $this->input->post('add')) {
                     
-                    $add['email'] = $this->input->post('email');
-                    $add['pswd'] = $this->input->post('pswd');
-                    $this->pages_model->add_info($page, $add);
+                    $edit['email'] = $this->input->post('email');
+                    $edit['pswd'] = $this->input->post('pswd');
+                    $this->pages_model->edit_info($page, $id, $edit);
                     redirect(base_url() . 'index.php/admin');
                 } else {
-                    $name = 'add/' . $page;
+                    $name = 'edit/' . $page;
                     $this->template->admin_view($name, $data);
                 }
             } elseif($page == 'slider') {

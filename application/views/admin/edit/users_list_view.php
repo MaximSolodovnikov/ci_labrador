@@ -12,7 +12,7 @@
                         
                         <?php foreach ($users_list as $item): ?>
                         <tr>
-                            <td>Email и пароль пользователя: <a href=""><?= $item['email'] . " | " . $item['pswd']; ?></a></td>
+                            <td>Email и пароль пользователя: <a href="<?= base_url(); ?>index.php/admin/edit/<?= $page; ?>/<?= $item['id']; ?>"><?= $item['email'] . " | " . $item['pswd']; ?></a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

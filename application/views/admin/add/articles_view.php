@@ -36,7 +36,7 @@
                                 <?php if (form_error('text')): ?>
                                     <p class="text-danger"><?= form_error('text'); ?></p>
                                 <?php endif; ?>
-                                <textarea name="text" class="form-control" rows="3" id="textArea" placeholder="Текст статьи"><?= set_value('text')?></textarea>
+                                <textarea name="text" class="form-control" rows="10" id="textArea" placeholder="Текст статьи"><?= set_value('text')?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
