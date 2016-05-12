@@ -31,7 +31,7 @@
                         <a href="<?= base_url(); ?>index.php/admin/editlist/articles"  accesskey="">Редактировать</a>
                     </li>
                     <li>
-                        <a href=""  accesskey="">Удалить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/del/articles"  accesskey="">Удалить</a>
                     </li>
                 </ul>
 
@@ -44,7 +44,7 @@
                         <a href="<?= base_url(); ?>index.php/admin/editlist/users"  accesskey="">Редактировать</a>
                     </li>
                     <li>
-                        <a href=""  accesskey="">Удалить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/del/users"  accesskey="">Удалить</a>
                     </li>
                 </ul>
                 
@@ -57,7 +57,7 @@
                         <a href="<?= base_url(); ?>index.php/admin/editlist/slider"  accesskey="">Редактировать</a>
                     </li>
                     <li>
-                        <a href=""  accesskey="">Удалить</a>
+                        <a href="<?= base_url(); ?>index.php/admin/del/slider"  accesskey="">Удалить</a>
                     </li>
                 </ul>
             </div>

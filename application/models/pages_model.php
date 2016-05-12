@@ -105,4 +105,10 @@ class Pages_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update($page, $edit);
     }
+    
+    function del_info($page, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete($page);
+    }
 }

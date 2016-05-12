@@ -261,4 +261,77 @@ class Admin extends CI_Controller {
             }
         }
     }
+    
+    function del($page)
+    {
+        $data['user'] = $this->session->userdata('email');
+        $data['error'] = '';
+        
+        if (empty($data['user'])) {
+            
+            $name = 'login';
+            $this->template->login_view($name, $data);
+        } else {
+            
+            if ($page == 'articles') {
+                
+                //For link on editing page in article_list_view
+                $data['page'] = $page;
+                $data['articles_list'] = $this->pages_model->get_editlist($page);
+                if ($this->input->post('del')) {
+                
+                    $id = $this->input->post('id');
+                    $this->pages_model->del_info($page, $id);
+                    redirect(base_url() . 'index.php/admin');
+                    
+                } else {
+                    $name = 'del/articles_list';
+                    $this->template->admin_view($name, $data);
+                }
+            } elseif ($page == 'users') {
+                
+                //get_info() - data about specific article
+                $data['page_info'] = $this->pages_model->get_info($page, $id);
+                if ($this->input->post('edit')) {
+                    
+                    $this->pages_model->edit_info($page, $id);
+                    redirect(base_url() . 'index.php/admin');
+                } else {
+                    $name = 'edit/' . $page;
+                    $this->template->admin_view($name, $data);
+                }
+            } elseif($page == 'slider') {
+                
+                $data['page_info'] = $this->pages_model->get_page_info('add_slider');
+                
+                if ($this->input->post('add')) {
+                    
+                    $config['upload_path'] = './images/slider/';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg|JPEG';
+                    $config['max_size']	= '1000';
+                    $config['encrypt_name']  = TRUE;
+                    $config['remove_spaces']  = TRUE;
+
+                    $this->load->library('upload', $config);
+
+                    if (!$this->upload->do_upload('userfile')) {
+                        
+                        $name = 'add/info';
+                        $this->template->admin_view($name, $data);
+                        
+                    } else {
+                        
+                        $upload_data = $this->upload->data();
+                        $add['slider_img'] = $upload_data['file_name'];
+
+                        $this->pages_model->add_info($page, $add);
+                        redirect(base_url() . 'index.php/admin');
+                    } 
+                } else {
+                    $name = 'add/' . $page;
+                    $this->template->admin_view($name, $data);
+                }
+            }
+        }
+    }
 }
