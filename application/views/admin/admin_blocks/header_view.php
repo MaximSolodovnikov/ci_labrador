@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<?= base_url(); ?>admin_favicon.ico">
 
-    <title><?= $page_info['title']; ?></title>
+    <title><?php if (!isset($page_info['title'])){echo $page_info['email'];} else {echo $page_info['title'];} ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url(); ?>css/bootstrap.css" rel="stylesheet">
