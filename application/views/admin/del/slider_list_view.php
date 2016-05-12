@@ -2,18 +2,21 @@
             
             <div class="table-responsive">
                 <table class="table table-striped">
-                    <h3>Выберете картинку слайдера для редактирования, <br>формат картинки должен быть 960 х 640</h3>
+                    <h3>Выберете картинку слайдера для удаления</h3>
                     <thead>
                         <tr>
                             <th>Картинки слайдера</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
                         <?php foreach ($slider_list as $item): ?>
-                        <tr>
-                            <td><a href=""><img src="<?= base_url(); ?>images/slider/<?= $item['slider_img']; ?>" alt="" style="width: 30%"></a></td>
-                        </tr>
+                            <form method="post" action="">
+                            <tr>
+                                <td><img src="<?= base_url(); ?>images/slider/<?= $item['slider_img']; ?>" alt="" style="width: 30%"></td>
+                                <td><td><input type="submit" name="del" value="Удалить"></td></td>
+                                <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                            </tr>
+                            </form>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

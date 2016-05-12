@@ -276,6 +276,7 @@ class Admin extends CI_Controller {
             if ($page == 'articles') {
                 
                 $data['articles_list'] = $this->pages_model->get_editlist($page);
+                
                 if ($this->input->post('del')) {
                 
                     $id = $this->input->post('id');
@@ -289,11 +290,8 @@ class Admin extends CI_Controller {
             } elseif ($page == 'users') {
                 
                 $data['users_list'] = $this->pages_model->get_editlist($page);
-                //For link on editing page in article_list_view
-                $data['page'] = $page;
                 
                 if ($this->input->post('del')) {
-                    
                     
                     $id = $this->input->post('id');
                     $this->pages_model->del_info($page, $id);
@@ -304,33 +302,16 @@ class Admin extends CI_Controller {
                 }
             } elseif($page == 'slider') {
                 
-                $data['page_info'] = $this->pages_model->get_page_info('add_slider');
+                $data['slider_list'] = $this->pages_model->get_editlist($page);
                 
-                if ($this->input->post('add')) {
+                if ($this->input->post('del')) {
                     
-                    $config['upload_path'] = './images/slider/';
-                    $config['allowed_types'] = 'gif|jpg|png|jpeg|JPEG';
-                    $config['max_size']	= '1000';
-                    $config['encrypt_name']  = TRUE;
-                    $config['remove_spaces']  = TRUE;
-
-                    $this->load->library('upload', $config);
-
-                    if (!$this->upload->do_upload('userfile')) {
-                        
-                        $name = 'add/info';
-                        $this->template->admin_view($name, $data);
-                        
-                    } else {
-                        
-                        $upload_data = $this->upload->data();
-                        $add['slider_img'] = $upload_data['file_name'];
-
-                        $this->pages_model->add_info($page, $add);
-                        redirect(base_url() . 'index.php/admin');
-                    } 
+                    $id = $this->input->post('id');
+                    $this->pages_model->del_info($page, $id);
+                    redirect(base_url() . 'index.php/admin');
+                    
                 } else {
-                    $name = 'add/' . $page;
+                    $name = 'del/slider_list';
                     $this->template->admin_view($name, $data);
                 }
             }
