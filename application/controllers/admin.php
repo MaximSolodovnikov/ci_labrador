@@ -153,12 +153,6 @@ class Admin extends CI_Controller {
                 $name = 'edit/users_list';
                 $this->template->admin_view($name, $data);
                 
-            } else {
-                
-                $data['page_info'] = $this->pages_model->get_page_info('slider_editlist');
-                $data['slider_list'] = $this->pages_model->get_editlist($page);
-                $name = 'edit/slider_list';
-                $this->template->admin_view($name, $data);
             }
         }
     }
@@ -273,8 +267,11 @@ class Admin extends CI_Controller {
             $this->template->login_view($name, $data);
         } else {
             
+            
             if ($page == 'articles') {
                 
+                //del_articles - data in table page for title (page_info)
+                $data['page_info'] = $this->pages_model->get_page_info('del_articles');   
                 $data['articles_list'] = $this->pages_model->get_editlist($page);
                 
                 if ($this->input->post('del')) {
@@ -289,6 +286,8 @@ class Admin extends CI_Controller {
                 }
             } elseif ($page == 'users') {
                 
+                //del_users - data in table page for title (page_info)
+                $data['page_info'] = $this->pages_model->get_page_info('del_users'); 
                 $data['users_list'] = $this->pages_model->get_editlist($page);
                 
                 if ($this->input->post('del')) {
@@ -302,6 +301,8 @@ class Admin extends CI_Controller {
                 }
             } elseif($page == 'slider') {
                 
+                //del_sleder - data in table page for title (page_info)
+                $data['page_info'] = $this->pages_model->get_page_info('del_slider'); 
                 $data['slider_list'] = $this->pages_model->get_editlist($page);
                 
                 if ($this->input->post('del')) {

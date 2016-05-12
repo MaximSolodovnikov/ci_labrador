@@ -54,9 +54,6 @@
                         <a href="<?= base_url(); ?>index.php/admin/add/slider" accesskey="">Добавить</a>
                     </li>
                     <li>
-                        <a href="<?= base_url(); ?>index.php/admin/editlist/slider"  accesskey="">Редактировать</a>
-                    </li>
-                    <li>
                         <a href="<?= base_url(); ?>index.php/admin/del/slider"  accesskey="">Удалить</a>
                     </li>
                 </ul>
