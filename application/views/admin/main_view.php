@@ -5,15 +5,17 @@
                     <h3>Статистика</h3>
                     <thead>
                         <tr>
-                            <th><a href="">Статьи</a></th>
-                            <th><a href="">Пользователи</a></th>
-                            <th><a href="">Картинки в слайдере</a></th>
+                            <th><a href="<?= base_url(); ?>index.php/admin/editlist/articles">Статьи</a></th>
+                            <th><a href="<?= base_url(); ?>index.php/admin/editlist/users">Пользователи</a></th>
+                            <th><a href="<?= base_url(); ?>index.php/admin/del/slider">Картинки в слайдере</a></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>x</td>
-                        <td>x</td>
-                        <td>x</td>
+                        <tr>
+                            <td><?= $stat['articles']; ?></td>
+                            <td><?= $stat['users']; ?></td>
+                            <td><?= $stat['slider']; ?></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

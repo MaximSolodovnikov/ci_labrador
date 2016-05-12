@@ -10,9 +10,17 @@ class Admin extends CI_Controller {
         
         if (empty($data['user'])) {
             
+            $data['page_info'] = $this->pages_model->get_page_info('login');
             $name = 'login';
             $this->template->login_view($name, $data);
         } else {
+            
+            $data['stat'] = array(
+                
+                'articles' => $this->db->count_all_results('articles'),
+                'users' => $this->db->count_all_results('users'),
+                'slider' => $this->db->count_all_results('slider')
+            );
             
             $data['page_info'] = $this->pages_model->get_page_info('admin');
             $name = 'main';
