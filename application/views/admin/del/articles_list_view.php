@@ -10,15 +10,13 @@
                     </thead>
                     <tbody>
                         <?php foreach ($articles_list as $item): ?>
-                    <form method="post" action="">
-
-                        <tr>
-                            <td><?= $item['title']; ?></td>
-                            <td><input type="submit" name="del" value="Удалить"></td>
-                            <input type="hidden" name="id" value="<?= $item['id']; ?>">
-                        </tr>
-                                            
-                    </form>
+                        <form method="post" action="">
+                            <tr>
+                                <td><?= $item['title']; ?></td>
+                                <td><input type="submit" name="del" value="Удалить"></td>
+                                <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                            </tr>
+                        </form>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

@@ -2,18 +2,21 @@
             
             <div class="table-responsive">
                 <table class="table table-striped">
-                    <h3>Выберете пользователя для редактирования</h3>
+                    <h3>Выберете пользователя для удаления</h3>
                     <thead>
                         <tr>
                             <th>Данные пользователя</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
                         <?php foreach ($users_list as $item): ?>
-                        <tr>
-                            <td>Email и пароль пользователя: <a href="<?= base_url(); ?>index.php/admin/edit/<?= $page; ?>/<?= $item['id']; ?>"><?= $item['email'] . " | " . $item['pswd']; ?></a></td>
-                        </tr>
+                            <form method="post" action="">
+                            <tr>
+                                <td>Email и пароль пользователя: <?= $item['email'] . " | " . $item['pswd']; ?></td>
+                                <td><input type="submit" name="del" value="Удалить"></td>
+                                <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                            </tr>
+                            </form>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

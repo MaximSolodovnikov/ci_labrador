@@ -275,8 +275,6 @@ class Admin extends CI_Controller {
             
             if ($page == 'articles') {
                 
-                //For link on editing page in article_list_view
-                $data['page'] = $page;
                 $data['articles_list'] = $this->pages_model->get_editlist($page);
                 if ($this->input->post('del')) {
                 
@@ -290,14 +288,18 @@ class Admin extends CI_Controller {
                 }
             } elseif ($page == 'users') {
                 
-                //get_info() - data about specific article
-                $data['page_info'] = $this->pages_model->get_info($page, $id);
-                if ($this->input->post('edit')) {
+                $data['users_list'] = $this->pages_model->get_editlist($page);
+                //For link on editing page in article_list_view
+                $data['page'] = $page;
+                
+                if ($this->input->post('del')) {
                     
-                    $this->pages_model->edit_info($page, $id);
+                    
+                    $id = $this->input->post('id');
+                    $this->pages_model->del_info($page, $id);
                     redirect(base_url() . 'index.php/admin');
                 } else {
-                    $name = 'edit/' . $page;
+                    $name = 'del/users_list';
                     $this->template->admin_view($name, $data);
                 }
             } elseif($page == 'slider') {
