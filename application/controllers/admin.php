@@ -111,11 +111,11 @@ class Admin extends CI_Controller {
 
                     $this->load->library('upload', $config);
 
-                    if (!$this->upload->do_upload('userfile')) {
+                    if ( ! $this->upload->do_upload()) {
                         
                         $name = 'add/info';
                         $this->template->admin_view($name, $data);
-                        
+
                     } else {
                         
                         $upload_data = $this->upload->data();
@@ -123,6 +123,7 @@ class Admin extends CI_Controller {
 
                         $this->pages_model->add_info($page, $add);
                         redirect(base_url() . 'index.php/admin');
+
                     } 
                 } else {
                     $name = 'add/' . $page;

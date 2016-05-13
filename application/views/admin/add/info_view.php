@@ -2,7 +2,9 @@
     <div class="row" id="content">
         <div class="col-lg-12">
             <div id="articles">
-                <h3 class="text-danger">Вы не выбрали фото для слайдера</h3>
+                <h3 class="text-danger">Вы не выбрали фото для слайдера<br><br>
+                или фото слайдера превышает допустимый размер в 1 мегабайт<br><br>
+                или формат фото отличается от допустимых (gif | jpg | png | jpeg | JPEG)</h3><br>
             </div>
         </div>
     </div>
