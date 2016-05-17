@@ -72,7 +72,26 @@ class Admin extends CI_Controller {
                 }
                 // --------MultiUploads--------------->>>
                 
-                
+                // Каталог, в который мы будем принимать файл:
+                    $uploaddir = './images/news/images/';
+
+                    if (!empty($_FILES))
+                    {
+                        foreach ($_FILES['img']['name'] as $i => $name)
+                        {
+                            $userfile = $uploaddir.basename($name);
+
+                            // Копируем файл из каталога для временного хранения файлов:
+                            if (move_uploaded_file($_FILES['img']['tmp_name'][$i], $userfile))
+                            {
+                                $_FILES['img']['name'][$i];
+                            }
+                            else
+                            {
+                                echo "<h3>Ошибка! Не удалось загрузить файл на сервер!</h3>"; exit;
+                            }
+                        }
+                    }
 
                 // <<<--------MultiUploads----------------
                 
