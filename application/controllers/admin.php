@@ -84,15 +84,17 @@ class Admin extends CI_Controller {
                             // Копируем файл из каталога для временного хранения файлов:
                             if (move_uploaded_file($_FILES['img']['tmp_name'][$i], $userfile))
                             {
-                                $_FILES['img']['name'][$i];
+                                $photos[] = $_FILES['img']['name'][$i];
+                                
                             }
                             else
                             {
                                 echo "<h3>Ошибка! Не удалось загрузить файл на сервер!</h3>"; exit;
                             }
-                        }
+                        } 
                     }
-
+/*var_dump($photos['img']);
+die();*/
                 // <<<--------MultiUploads----------------
                 
                 $add['title'] = $this->input->post('title');
@@ -100,8 +102,19 @@ class Admin extends CI_Controller {
                 $add['text'] = $this->input->post('text');
                 $add['keywords'] = $this->input->post('keywords');
                                
-                $photos['article_id'] = $this->pages_model->add_info($page, $add);
-                //$this->pages_model->add_img($photos);
+                $article_id/*$photos['article_id']*/ = $this->pages_model->add_info($page, $add);
+                
+                foreach ($photos as $photo) {
+                    
+                    $photo_insert = array(
+                        
+                        'img' => $photo,
+                        'article_id' => $article_id
+                    );
+                    
+                    $this->pages_model->add_img($photo_insert);
+                }
+                
                 redirect(base_url() . 'index.php/admin');
                 //-------------------------------------
                 } else {
