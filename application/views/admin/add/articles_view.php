@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Главная картинка для статьи</label>
                             <div class="col-lg-10">
-                                <input type="file" name="userfile"><br/>
+                                <input type="file" name="preview_img"><br/>
                             </div>   
                         </div>
                         <div class="form-group">
@@ -47,6 +47,12 @@
                                 <?php endif; ?>
                                 <textarea name="keywords" class="form-control" rows="3" id="textArea" placeholder="Ключевые слова - это слова из предполагаемого вопроса, которые есть на странице нашего сайта или в ссылках, ведущих на страницу нашего сайта, называются «ключевыми». Например: лабрадор, щенки лабрадора и т.д."><?= set_value('keywords')?></textarea>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-lg-2 control-label">Фото статьи</label>
+                            <div class="col-lg-10">
+                                <input type="file" name="img[]" multiple="multiple"><br/>
+                            </div>   
                         </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">

@@ -3,21 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/users_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/models/pages_model.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/del/articles_list_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/blocks/menu_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/controllers/login.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/login_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/articles_list_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/admin_blocks/header_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/edit/articles_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/del/users_list_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/main_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/admin_blocks/menu_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/del/slider_list_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/views/admin/add/articles_view.php</file>
-            <file>file:/X:/home/localhost/www/labrador/application/controllers/admin.php</file>
+            <file>file:/D:/WebServers/home/localhost/www/labrador/application/views/admin/add/articles_view.php</file>
+            <file>file:/D:/WebServers/home/localhost/www/labrador/application/controllers/admin.php</file>
+            <file>file:/D:/WebServers/home/localhost/www/labrador/application/models/pages_model.php</file>
+            <file>file:/D:/WebServers/home/localhost/www/labrador/index.php</file>
         </group>
     </open-files>
 </project-private>

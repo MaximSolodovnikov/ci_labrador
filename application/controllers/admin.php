@@ -62,22 +62,27 @@ class Admin extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('userfile')) {
+                if (!$this->upload->do_upload('preview_img')) {
 
                     $add['preview_img'] = 'default-article.png';
-                        
-                } else {
 
+                } else {
                     $upload_data = $this->upload->data();
                     $add['preview_img'] = $upload_data['file_name'];
                 }
+                // --------MultiUploads--------------->>>
+                
+                
+
+                // <<<--------MultiUploads----------------
                 
                 $add['title'] = $this->input->post('title');
                 $add['title_url'] = $this->input->post('title_url');
                 $add['text'] = $this->input->post('text');
                 $add['keywords'] = $this->input->post('keywords');
-                
-                $this->pages_model->add_info($page, $add);
+                               
+                $photos['article_id'] = $this->pages_model->add_info($page, $add);
+                //$this->pages_model->add_img($photos);
                 redirect(base_url() . 'index.php/admin');
                 //-------------------------------------
                 } else {
@@ -111,11 +116,11 @@ class Admin extends CI_Controller {
 
                     $this->load->library('upload', $config);
 
-                    if ( ! $this->upload->do_upload()) {
+                    if (!$this->upload->do_upload('userfile')) {
                         
                         $name = 'add/info';
                         $this->template->admin_view($name, $data);
-
+                        
                     } else {
                         
                         $upload_data = $this->upload->data();
@@ -123,7 +128,6 @@ class Admin extends CI_Controller {
 
                         $this->pages_model->add_info($page, $add);
                         redirect(base_url() . 'index.php/admin');
-
                     } 
                 } else {
                     $name = 'add/' . $page;
@@ -155,13 +159,12 @@ class Admin extends CI_Controller {
                 
             } elseif ($page == 'users') {
                 
-                //For link on editing page in article_list_view
+                //For link on editing page in users_list_view
                 $data['page'] = $page;
                 $data['page_info'] = $this->pages_model->get_page_info('users_editlist');
                 $data['users_list'] = $this->pages_model->get_editlist($page);
                 $name = 'edit/users_list';
-                $this->template->admin_view($name, $data);
-                
+                $this->template->admin_view($name, $data);   
             }
         }
     }

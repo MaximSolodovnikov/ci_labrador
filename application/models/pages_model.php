@@ -82,9 +82,17 @@ class Pages_model extends CI_Model {
     /*Added info about articles, users and slider images to database*/
     function add_info($page, $add)
     {
-         $this->db->insert($page, $add);
+        $this->db->insert($page, $add);
+        $return_id = $this->db->insert_id(); 
+        return $return_id;
     }
 
+    function add_img($photos)
+    {
+        $this->db->insert('images', $photos);
+
+    }
+    
     function get_editlist($page)
     {
         $this->db->order_by('id', 'desc');
