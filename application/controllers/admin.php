@@ -70,22 +70,19 @@ class Admin extends CI_Controller {
                     $upload_data = $this->upload->data();
                     $add['preview_img'] = $upload_data['file_name'];
                 }
-                // --------MultiUploads--------------->>>
                 
-                // Каталог, в который мы будем принимать файл:
+                // --------MultiUploads--------------->>>
                     $uploaddir = './images/news/images/';
 
                     if (!empty($_FILES))
                     {
                         foreach ($_FILES['img']['name'] as $i => $name)
                         {
-                            $userfile = $uploaddir.basename($name);
+                            $userfile = $uploaddir . basename($name);
 
-                            // Копируем файл из каталога для временного хранения файлов:
                             if (move_uploaded_file($_FILES['img']['tmp_name'][$i], $userfile))
                             {
                                 $photos[] = $_FILES['img']['name'][$i];
-                                
                             }
                             else
                             {
@@ -93,16 +90,14 @@ class Admin extends CI_Controller {
                             }
                         } 
                     }
-/*var_dump($photos['img']);
-die();*/
                 // <<<--------MultiUploads----------------
-                
+                    
                 $add['title'] = $this->input->post('title');
                 $add['title_url'] = $this->input->post('title_url');
                 $add['text'] = $this->input->post('text');
                 $add['keywords'] = $this->input->post('keywords');
                                
-                $article_id/*$photos['article_id']*/ = $this->pages_model->add_info($page, $add);
+                $article_id = $this->pages_model->add_info($page, $add);
                 
                 foreach ($photos as $photo) {
                     

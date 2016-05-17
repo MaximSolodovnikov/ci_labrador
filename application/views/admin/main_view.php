@@ -1,13 +1,14 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             
-            <div class="table-responsive">
+            <div class="table-responsive main_table_statistic">
+                <h3 style="text-align: center; margin-bottom: 35px; font-size: 2em;">Статистика</h3>
                 <table class="table table-striped">
-                    <h3>Статистика</h3>
+                    
                     <thead>
                         <tr>
-                            <th><a href="<?= base_url(); ?>index.php/admin/editlist/articles">Статьи</a></th>
-                            <th><a href="<?= base_url(); ?>index.php/admin/editlist/users">Пользователи</a></th>
-                            <th><a href="<?= base_url(); ?>index.php/admin/del/slider">Картинки в слайдере</a></th>
+                            <td>Статьи</td>
+                            <td>Пользователи</td>
+                            <td>Слайдер</td>
                         </tr>
                     </thead>
                     <tbody>

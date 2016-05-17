@@ -2,9 +2,9 @@
     <div id="articles">
         <div class="row">
             <?php foreach ($img_for_gallery as $item):?>
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
                 <a href="" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                    <img class="img_of_article" src="<?= base_url(); ?>images/news/images/<?php echo $item['img']; ?>" alt="">
+                    <img class="img_of_article gallery_img" src="<?= base_url(); ?>images/news/images/<?php echo $item['img']; ?>" alt="">
                 </a>
             </div>
             <?php endforeach; ?>

@@ -16,8 +16,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Главная картинка для статьи</label>
+                            <label for="inputEmail" class="col-lg-2 control-label">Главная картинка статьи</label>
                             <div class="col-lg-10">
+                                <label style="color: #DCE4EC;">Важно!!! Чтобы в имени загружаемого файла, не содержалось символов кириллицы!!!</label>
                                 <input type="file" name="preview_img"><br/>
                             </div>   
                         </div>
@@ -45,7 +46,7 @@
                                 <?php if (form_error('keywords')): ?>
                                     <p class="text-danger"><?= form_error('keywords'); ?></p>
                                 <?php endif; ?>
-                                <textarea name="keywords" class="form-control" rows="3" id="textArea" placeholder="Ключевые слова - это слова из предполагаемого вопроса, которые есть на странице нашего сайта или в ссылках, ведущих на страницу нашего сайта, называются «ключевыми». Например: лабрадор, щенки лабрадора и т.д."><?= set_value('keywords')?></textarea>
+                                <textarea name="keywords" class="form-control" rows="3" id="textArea" placeholder="Ключевые слова - это слова из предполагаемого вопроса, которые есть на странице сайта или в ссылках, ведущих на страницу сайта - называются «ключевыми». Например: лабрадор, щенки лабрадора и т.д."><?= set_value('keywords')?></textarea>
                             </div>
                         </div>
                         <div class="form-group">

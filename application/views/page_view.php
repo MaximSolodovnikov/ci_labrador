@@ -20,7 +20,7 @@
                         <?php if (isset($item['img'])): ?>
                             <div class="col-xs-6 col-md-3">
                                 <a href="" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                                    <img class="img_of_article" src="<?= base_url(); ?>images/news/images/<?php echo $item['img']; ?>" alt="">
+                                    <img class="img_of_article gallery_img" src="<?= base_url(); ?>images/news/images/<?php echo $item['img']; ?>" alt="">
                                 </a>
                             </div>
                         <?php endif; ?>
