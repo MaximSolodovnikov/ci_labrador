@@ -119,4 +119,10 @@ class Pages_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete($page);
     }
+    
+    function del_img($article_id)
+    {
+        $this->db->where('article_id', $article_id);
+        $this->db->delete('images');
+    }
 }

@@ -113,3 +113,10 @@ img.gallery_img {
 .clear {
 	clear: both;
 }
+
+.top {
+    cursor: pointer;
+    text-align: center;
+    color: white !important;
+    padding-top: 20px;
+}

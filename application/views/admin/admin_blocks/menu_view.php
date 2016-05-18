@@ -12,8 +12,35 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?= base_url(); ?>index.php/admin/logout">Выход</a></li>
+                    <li><a style="color: yellow;" href="<?= base_url(); ?>index.php/admin/logout">Выход</a></li><li class="line_in_menu"></li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/add/articles" accesskey="">Добавить статью</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/editlist/articles"  accesskey="">Редактировать статью</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/del/articles"  accesskey="">Удалить статью</a>
+                    </li>
+                    <li class="line_in_menu"></li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/add/users" accesskey="">Добавить пользователя</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/editlist/users"  accesskey="">Редактировать пользователя</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/del/users"  accesskey="">Удалить пользователя</a>
+                    </li>
+                    <li class="line_in_menu"></li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/add/slider" accesskey="">Добавить фото в слайдер</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a href="<?= base_url(); ?>index.php/admin/del/slider"  accesskey="">Удалить фото из слайдера</a>
+                    </li>
                 </ul>
+                
             </div>
         </div>
     </nav>

@@ -317,6 +317,7 @@ class Admin extends CI_Controller {
                 
                     $id = $this->input->post('id');
                     $this->pages_model->del_info($page, $id);
+                    $this->pages_model->del_img($id);
                     redirect(base_url() . 'index.php/admin');
                     
                 } else {
